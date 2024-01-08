@@ -48,3 +48,31 @@ The intention of this repository is to make it easier to use and demonstrate IBM
 
 
 IBM Public Repository Disclosure: All content in this repository including code has been provided by IBM under the associated open source software license and IBM is under no obligation to provide enhancements, updates, or support. IBM developers produced this code as an open source project (not as an IBM product), and IBM makes no assertions as to the level of quality nor security, and will not be maintaining this code going forward.
+
+### Env
+- Ubuntu 22.04 LTS under WSL2
+
+### Create a new conda environment
+```bash
+conda create -n tsfm_enacom python=3.10
+conda activate tsfm_enacom
+```
+
+### Install the requirements
+```
+pip install ".[notebooks]"
+```
+
+### Install tourch
+```
+conda install pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia
+or 
+pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+
+pip install accelerate -U
+```
+
+### Install tsfm from source
+```
+python -m ipykernel install --user --name=tsfm_enacom
+```
